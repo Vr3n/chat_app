@@ -375,3 +375,4 @@ GitHub.sublime-settings
 .history
 secret_keys.py
 .X*
+*.rdb
