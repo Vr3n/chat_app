@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App</title>
+</head>
+<body>
+    What chat room would you like to enter?
+    <br>
+
+    <input type="text" size="100" id="room-name-input">
+    <br>
+    <input type="button" value="Enter" id="room-name-submit">
+
+
+    <script>
+        document.querySelector('#room-name-input').focus();
+
+        document.querySelector('#room-name-submit').onkeyup = function (e) {
+            if (e.keyCode === 13) {
+                document.querySelector('#room-name-submit').click();
+            }
+        };
+
+        document.querySelector('#room-name-submit').onclick = function (e) {
+            let roomName = document.querySelector('#room-name-input').value();
+            window.location.pathname = '/chat/' + roomName + '/';
+        };
+
+    </script>
+
+</body>
+</html>
