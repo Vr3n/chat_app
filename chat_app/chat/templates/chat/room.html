@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,10 +14,11 @@
     <br>
     <input type="button" value="Send" id="chat-message-submit">
 
+    <script src="{% static 'js/reconnecting-websocket.js' %}"></script>
     <script>
         let roomName = {{ room_name_json }};
 
-        let chatSocket = new WebSocket(
+        let chatSocket = new ReconnectingWebSocket(
             'ws://' + window.location.host + '/ws/chat/' + roomName + '/'
         );
 
