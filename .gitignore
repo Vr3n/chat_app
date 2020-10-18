@@ -377,3 +377,6 @@ secret_keys.py
 .X*
 *.rdb
 migrations/
+
+# node modules
+**/node_modules/
